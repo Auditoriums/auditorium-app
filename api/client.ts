@@ -12,12 +12,16 @@ const ENV = {
     https: 'https://api.knmau.auditorium.com.ua/',
   },
   stg: {
-    wss: 'wss://api.knmau.auditorium.com.ua/',
+    wss: 'wss://staging.api.knmau.auditorium.com.ua/',
     https: 'https://staging.api.knmau.auditorium.com.ua/',
+  },
+  local: {
+    wss: 'ws://192.168.31.217:8080/',
+    https: 'http://192.168.31.217:8080/',
   }
 }
 
-const CURRENT_ENV = ENV.prod;
+const CURRENT_ENV = ENV.stg;
 
 const httpLink = createHttpLink({
   uri: CURRENT_ENV.https

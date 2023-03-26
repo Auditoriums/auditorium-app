@@ -3,16 +3,20 @@ import {getItem} from "../asyncStorage";
 
 const ENV = {
   prod: {
-    wss: 'wss://api.auditoriu.me/',
-    https: 'https://api.auditoriu.me/',
+    wss: 'wss://api.knmau.auditorium.com.ua/',
+    https: 'https://api.knmau.auditorium.com.ua/',
   },
   stg: {
-    wss: 'wss://staging.api.auditoriu.me/',
-    https: 'https://staging.api.auditoriu.me/',
+    wss: 'wss://staging.api.knmau.auditorium.com.ua/',
+    https: 'https://staging.api.knmau.auditorium.com.ua/',
+  },
+  local: {
+    wss: 'ws://192.168.31.217:8080/',
+    https: 'http://192.168.31.217:8080/',
   }
 }
 
-const CURRENT_ENV = ENV.prod;
+const CURRENT_ENV = ENV.stg;
 
 const wsLink: any = new WebSocketLink({
     uri: CURRENT_ENV.wss,
